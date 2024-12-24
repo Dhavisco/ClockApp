@@ -2,6 +2,11 @@
 // import { useQuotes } from "../hooks/useQuotes";
 // import { useTime } from "../hooks/useTime";
 
+import QuotesSection from "./QuotesSection";
+// import TimeSection from "./TimeSection";
+
+import './../styles/main.scss'
+
 
 const Index = () => {
 //   const { data: timeData, isLoading: timeLoading } = useTime();
@@ -40,9 +45,19 @@ const Index = () => {
 //         <p>Error loading quote</p>
 //       )}
 //     </div>
-<div>
-    
-</div>
+<div className="main-container">
+  
+      {/* Quote Section */}
+      <div className="quote-wrapper">
+        <QuotesSection />
+      </div>
+
+      {/* Time Section */}
+      <div className="time-wrapper">
+        <h1>12:45 PM</h1>
+        <p>Your Location, Country</p>
+      </div>
+    </div>
   );
 };
 

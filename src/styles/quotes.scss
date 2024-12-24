@@ -1,0 +1,58 @@
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+.quote-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-sizing: border-box;
+
+     @media (min-width: $breakpoint-desktop) {
+    max-width: 50%;
+  }
+    @media (min-width: $breakpoint-tablet) {
+    max-width: 90%;
+  }
+
+   .quote-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+    letter-spacing: 0.5px;
+    font-weight: 200;
+
+    @media (min-width: $breakpoint-tablet) {
+    max-width: 90%;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    max-width: 95%;
+
+  }
+
+
+    .author {
+        margin-top: 0.8rem;
+        font-weight: 600;
+    }
+
+    }
+
+    button{
+     background-color: transparent;
+     border: none;
+     color: white;
+     display: flex;
+     align-items: start;
+     margin-top: 0.2rem;
+     padding-right: 1rem;
+
+     :hover{
+        cursor: pointer;
+     }
+     
+
+    }
+}

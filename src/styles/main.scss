@@ -1,0 +1,70 @@
+// Variables
+$primary-color: #ffffff; // White text
+$padding-mobile: 1.5rem;
+$padding-tablet: 2rem;
+$padding-desktop: 2rem;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$max-width-desktop: 1020px; // Centering limit for desktops
+
+.main-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: $padding-mobile;
+  color: $primary-color;
+  box-sizing: border-box;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: $padding-tablet;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    max-width: $max-width-desktop;
+    margin: 0 auto;
+    padding: $padding-desktop;
+  }
+
+  .quote-wrapper {
+    
+    font-size: 1rem;
+
+    @media (min-width: $breakpoint-tablet) {
+      font-size: 1.25rem; // Larger text for tablets
+    }
+
+    @media (min-width: $breakpoint-desktop) {
+      font-size: 1.5rem; // Even larger text for desktops
+    }
+  }
+
+  .time-wrapper {
+    
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+
+      @media (min-width: $breakpoint-tablet) {
+        font-size: 3.5rem; // Adjust font size for tablets
+      }
+
+      @media (min-width: $breakpoint-desktop) {
+        font-size: 4.5rem; // Adjust font size for desktops
+      }
+    }
+
+    p {
+      font-size: 1rem;
+
+      @media (min-width: $breakpoint-tablet) {
+        font-size: 1.25rem;
+      }
+
+      @media (min-width: $breakpoint-desktop) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

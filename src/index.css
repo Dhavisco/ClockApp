@@ -66,9 +66,62 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
-:root{
-  font-family: "Inter", serif;
+
+:root {
   
+  --font-family: 'Inter', serif;
+  font-family: 'Inter', serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  position: relative;
+  height: 100vh;
+  background: url('/src/assets/mobile/bg-image-daytime.jpg') no-repeat center
+    center;
+  background-size: cover;
+  font-family: var(--font-family);
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(48, 48, 48, 0.4); /* Semi-transparent overlay */
+  z-index: 0; /* Ensures this is beneath the content */
+}
+
+/* Responsive Backgrounds */
+@media (min-width: 768px) {
+  /* Tablet */
+  body {
+    background: url('/src/assets/tablet/bg-image-daytime.jpg') no-repeat center center;
+    background-size: cover;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Desktop */
+  body {
+    background: url('/src/assets/desktop/bg-image-daytime.jpg') no-repeat center center;
+    background-size: cover;
+  }
+}
+
+
+.main-container {
+  position: relative;
+  z-index: 1; /* Places the content above the overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+  color: white;
 }
