@@ -1,9 +1,15 @@
 import { useEffect } from "react";
+import { useTime } from "./useTime";
 
 export const useUpdateBackground = () => {
+
+    const {data:timeData} = useTime();
   useEffect(() => {
     const updateBackground = () => {
-      const currentHour = new Date().getHours();
+      if (!timeData?.datetime) return;
+
+    //   const currentHour = new Date().getHours();
+      const currentHour = new Date(timeData?.datetime).getHours();
       const bodyElement = document.body;
 
       // Determine time of day
@@ -20,5 +26,5 @@ export const useUpdateBackground = () => {
     const interval = setInterval(updateBackground, 60 * 60 * 1000); // Update every hour
 
     return () => clearInterval(interval); // Cleanup on component unmount
-  }, []);
+  }, [timeData]);
 };
