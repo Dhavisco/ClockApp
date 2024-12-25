@@ -6,6 +6,7 @@ import QuotesSection from "./QuotesSection";
 // import TimeSection from "./TimeSection";
 
 import './../styles/main.scss'
+import { TimeSection } from "./TimeSection";
 
 
 const Index = () => {
@@ -53,10 +54,7 @@ const Index = () => {
       </div>
 
       {/* Time Section */}
-      <div className="time-wrapper">
-        <h1>12:45 PM</h1>
-        <p>Your Location, Country</p>
-      </div>
+      <TimeSection/>
     </div>
   );
 };

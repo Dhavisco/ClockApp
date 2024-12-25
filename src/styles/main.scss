@@ -5,7 +5,7 @@ $padding-tablet: 2rem;
 $padding-desktop: 2rem;
 $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1024px;
-$max-width-desktop: 1020px; // Centering limit for desktops
+// $max-width-desktop: 1040px; // Centering limit for desktops
 
 .main-container {
   height: 100vh;
@@ -21,8 +21,8 @@ $max-width-desktop: 1020px; // Centering limit for desktops
   }
 
   @media (min-width: $breakpoint-desktop) {
-    max-width: $max-width-desktop;
-    margin: 0 auto;
+    // max-width: $max-width-desktop;
+    margin: 0 8rem;
     padding: $padding-desktop;
   }
 

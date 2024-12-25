@@ -1,0 +1,138 @@
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+.time-container{
+display: flex;
+flex-direction: column;
+gap: 4rem;
+
+
+}
+
+ @media (min-width: $breakpoint-desktop) {
+   .time-container{
+    flex-direction: row;
+    justify-content: space-between;
+
+
+   }
+  }
+
+.time-content{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+
+    .greeting{
+    display: flex;
+    align-items: center;
+    width: max-content;
+    text-transform: uppercase;
+    font-size: large;
+    letter-spacing: 1.2px;
+    font-weight: 250;
+
+    img{
+        padding-right: 0.5rem;
+    }
+
+    .current{
+        visibility: hidden;
+    }
+
+ @media (min-width: $breakpoint-tablet) {
+   .current{
+        visibility: visible;
+        display: inline-block;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    .current{
+        visibility: visible;
+        display: inline-block;
+    }
+  }
+}
+
+.time{
+    font-size: 3.6rem;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+
+span{
+  font-size:1rem;
+  font-weight: 300;
+}
+}
+
+.location{
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+ @media (min-width: $breakpoint-tablet) {
+   .time{
+        visibility: visible;
+        display: inline-block;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    .time{
+    font-size: 6.5rem;
+
+    span{
+    font-size:2rem;
+    font-weight: 300;
+    }
+  }
+
+  .location{
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+}
+
+}
+
+.time-button{
+    background-color: white;
+    font-size: 1rem;
+    border-radius:9rem ;
+    color: black;
+    letter-spacing: 0.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+    padding-left: 0.8rem;
+    max-width: 7rem;
+
+    .time-arrow {
+  background-color: #303030;
+  border-radius: 8rem;
+  display: flex;
+  align-items: center;
+  padding: 0.9rem 0.8rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(114, 114, 114, 0.856); /* Transparent white with better visibility */
+    transform: scale(1.02); /* Slight scaling effect for better interactivity */
+  }
+}
+
+    
+}
+
+ @media (min-width: $breakpoint-desktop) {
+    .time-button{
+        height: 2.5rem;
+        align-self: flex-end;
+        gap: 0.5rem;
+    }
+  }
