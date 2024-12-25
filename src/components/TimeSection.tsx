@@ -69,7 +69,7 @@ export const TimeSection = () => {
           {currentTime} <span>{timeData?.abbreviation}</span>
         </div>
         <div className="location">
-          IN {locationData?.city}, {locationData?.countryCode}
+          IN {locationData?.city}, {locationData?.country_code}
         </div>
       </div>
       <div className="time-button">
