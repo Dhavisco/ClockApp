@@ -1,6 +1,7 @@
 import { useQuotes } from '../hooks/useQuotes';
 import './../styles/quotes.scss'
-import { FaArrowsRotate } from "react-icons/fa6";
+// import { FaArrowsRotate } from "react-icons/fa6";
+import refreshIcon from './../assets/desktop/icon-refresh.svg'
 
 
 const QuotesSection = () => {
@@ -21,7 +22,8 @@ const QuotesSection = () => {
       </div>
 
       <button onClick={refreshQuotes}>
-        <FaArrowsRotate/>
+        {/* <FaArrowsRotate/> */}
+        <img src={refreshIcon} alt="" />
       </button>
     </div>
     ) : (

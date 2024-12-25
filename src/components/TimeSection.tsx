@@ -3,6 +3,10 @@ import { useLocation } from "../hooks/useLocation";
 import { useTime } from "../hooks/useTime";
 import './../styles/time.scss'
 
+import SunIcon from './../assets/desktop/icon-sun.svg';
+import MoonIcon from './../assets/desktop/icon-moon.svg';
+import ArrowDownIcon from './../assets/desktop/icon-arrow-down.svg';
+
 export const TimeSection = () => {
   const { data: timeData } = useTime();
   const { data: locationData } = useLocation();
@@ -10,7 +14,7 @@ export const TimeSection = () => {
   const [currentTime, setCurrentTime] = useState<string>("");
   const [timeInfo, setTimeInfo] = useState({
     greeting: "Good Morning",
-    icon: "sun-icon.svg",
+    icon: SunIcon,
     bgClass: "daytime-bg",
   });
 
@@ -19,19 +23,19 @@ export const TimeSection = () => {
     if (hours >= 5 && hours < 12) {
       return {
         greeting: "Good Morning",
-        icon: "sun-icon.svg",
+        icon: SunIcon,
         bgClass: "daytime-bg",
       };
     } else if (hours >= 12 && hours < 18) {
       return {
         greeting: "Good Afternoon",
-        icon: "icon-sun.svg",
+        icon: SunIcon,
         bgClass: "daytime-bg",
       };
     } else {
       return {
         greeting: "Good Evening",
-        icon: "icon-moon.svg",
+        icon: MoonIcon,
         bgClass: "nighttime-bg",
       };
     }
@@ -58,7 +62,7 @@ export const TimeSection = () => {
     <div className={`time-container ${timeInfo.bgClass}`}>
       <div className="time-content">
         <div className="greeting">
-            <img src={`/src/assets/desktop/${timeInfo.icon}`} alt="Icon"/>
+            <img src={timeInfo.icon} alt="Icon"/>
              <div>{timeInfo.greeting}<span className="current">, IT'S CURRENTLY</span></div>
         </div>
         <div className="time">
@@ -71,7 +75,7 @@ export const TimeSection = () => {
       <div className="time-button">
         <div>MORE</div>
         <div className="time-arrow">
-            <img src={`/src/assets/desktop/icon-arrow-down.svg`} alt="" />
+            <img src={ArrowDownIcon} alt="" />
         </div>
       </div>
     </div>
