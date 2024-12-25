@@ -8,7 +8,6 @@ export const useTime = () => {
     queryFn: async () => {
       // Implement your async logic here
       const {data} = await axiosInstance.get(`${baseURL}/api/ip`);
-      console.log('time data',data)
       return data;
     }
   });

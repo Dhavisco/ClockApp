@@ -14,7 +14,6 @@ export const useQuotes = () => {
         queryKey: ['quotes'],
         queryFn: async () => {
             const {data} = await axiosInstance.get(`${baseURL}/random`)
-            console.log('quotes data',data)
             return data;
     }
 });

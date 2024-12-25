@@ -8,7 +8,6 @@ export const useLocation = () => {
     queryKey: ['location'],
     queryFn: async () => {
         const {data} = await axiosInstance.get(baseURL);
-        console.log('location data',data)
         return data;
     }
   })

@@ -9,6 +9,7 @@ import MoonIcon from './../assets/desktop/icon-moon.svg';
 import ArrowDownIcon from './../assets/desktop/icon-arrow-down.svg';
 import ArrowUpIcon from './../assets/desktop/icon-arrow-up.svg';
 import { TbChristmasTreeFilled } from "react-icons/tb";
+import Preloader from "./Preloader";
 
 
 interface TimeSectionProps {
@@ -17,8 +18,8 @@ interface TimeSectionProps {
 }
 
 export const TimeSection = ({toggleExpand, isExpanded}:TimeSectionProps) => {
-  const { data: timeData } = useTime();
-  const { data: locationData } = useLocation();
+  const { data: timeData, isLoading:timeLoading } = useTime();
+  const { data: locationData, isLoading:locationLoading } = useLocation();
 
   const [currentTime, setCurrentTime] = useState<string>("");
   const [timeInfo, setTimeInfo] = useState({
@@ -69,6 +70,10 @@ export const TimeSection = ({toggleExpand, isExpanded}:TimeSectionProps) => {
 
   //Toggle expanded view
  
+
+  if (timeLoading || locationLoading) {
+    return <Preloader />;
+  }
 
   return (
 //     <div className="time-section">
