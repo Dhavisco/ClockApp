@@ -71,7 +71,6 @@ button:focus-visible {
 
 
 :root {
-  
   --font-family: 'Inter', serif;
   font-family: 'Inter', serif;
   margin: 0;
@@ -81,44 +80,40 @@ button:focus-visible {
 body {
   margin: 0;
   position: relative;
-  height: 100vh;
-  background-size: cover;
+  min-height: 100vh; /* Ensures the body spans the full viewport height */
+  width: 100%; /* Ensures the body spans the full viewport width */
+  background-size: cover; /* Ensures the background image covers the whole screen */
+  background-position: center center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents background tiling */
   font-family: var(--font-family);
 }
 
 body.daytime {
-  background: url('/src/assets/mobile/bg-image-daytime.jpg') no-repeat center
-    center;
+  background-image: url('/src/assets/mobile/bg-image-daytime.jpg');
 }
 
 body.nighttime {
-  background: url('/src/assets/mobile/bg-image-nighttime.jpg') no-repeat center
-    center;
+  background-image: url('/src/assets/mobile/bg-image-nighttime.jpg');
 }
 
 /* Responsive Backgrounds */
 @media (min-width: 768px) {
   body.daytime {
-    background: url('/src/assets/tablet/bg-image-daytime.jpg') no-repeat center
-      center;
+    background-image: url('/src/assets/tablet/bg-image-daytime.jpg');
   }
   body.nighttime {
-    background: url('/src/assets/tablet/bg-image-nighttime.jpg') no-repeat
-      center center;
+    background-image: url('/src/assets/tablet/bg-image-nighttime.jpg');
   }
 }
 
 @media (min-width: 1024px) {
   body.daytime {
-    background: url('/src/assets/desktop/bg-image-daytime.jpg') no-repeat center
-      center;
+    background-image: url('/src/assets/desktop/bg-image-daytime.jpg');
   }
   body.nighttime {
-    background: url('/src/assets/desktop/bg-image-nighttime.jpg') no-repeat
-      center center;
+    background-image: url('/src/assets/desktop/bg-image-nighttime.jpg');
   }
 }
-
 
 body::before {
   content: '';
@@ -127,24 +122,6 @@ body::before {
   background-color: rgba(48, 48, 48, 0.4); /* Semi-transparent overlay */
   z-index: 0; /* Ensures this is beneath the content */
 }
-
-/* Responsive Backgrounds */
-@media (min-width: 768px) {
-  /* Tablet */
-  body {
-    background: url('/src/assets/tablet/bg-image-daytime.jpg') no-repeat center center;
-    background-size: cover;
-  }
-}
-
-@media (min-width: 1024px) {
-  /* Desktop */
-  body {
-    background: url('/src/assets/desktop/bg-image-daytime.jpg') no-repeat center center;
-    background-size: cover;
-  }
-}
-
 
 .main-container {
   position: relative;
