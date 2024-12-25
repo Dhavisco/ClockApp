@@ -16,7 +16,7 @@ const QuotesSection = () => {
    { quoteData ?
     (<div className="quote-container">
       <div className='quote-content'>
-        <div>{quoteData.content}</div>
+        <div>{quoteData.quote}</div>
         <div className='author'>{quoteData.author}</div>
       </div>
 

@@ -41,7 +41,7 @@ export const TimeSection = () => {
   useEffect(() => {
     const updateTime = () => {
       const now = new Date();
-      setCurrentTime(now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }));
+      setCurrentTime(now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false }));
 
       // Update greeting, icon, and background only if the hour changes
       const currentHour = now.getHours();
