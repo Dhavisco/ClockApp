@@ -3,8 +3,12 @@ import './../styles/quotes.scss'
 // import { FaArrowsRotate } from "react-icons/fa6";
 import refreshIcon from './../assets/desktop/icon-refresh.svg'
 
+interface QuotesSectionProps {
+  isExpanded: boolean;
+}
 
-const QuotesSection = () => {
+
+const QuotesSection = ({isExpanded}:QuotesSectionProps) => {
 
   const {data:quoteData, isLoading: quoteLoading, refreshQuotes } = useQuotes();
 
@@ -12,9 +16,10 @@ const QuotesSection = () => {
     return <p>Loading quote</p>
   }
 
+
   return (
 <>
-   { quoteData ?
+   {!isExpanded && quoteData ?
     (<div className="quote-container">
       <div className='quote-content'>
         <div>{quoteData.quote}</div>
@@ -27,7 +32,7 @@ const QuotesSection = () => {
       </button>
     </div>
     ) : (
-      <p>Error Loading Quotes</p>
+      <p>{isExpanded ? "" : "Error Loading Quotes"}</p>
     )
   
   }

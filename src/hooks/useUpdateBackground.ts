@@ -1,9 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTime } from "./useTime";
 
 export const useUpdateBackground = () => {
 
     const {data:timeData} = useTime();
+    const [timeOfDay, setTimeOfDay] = useState<"day" | "night">("day");
+
   useEffect(() => {
     const updateBackground = () => {
       if (!timeData?.datetime) return;
@@ -16,9 +18,11 @@ export const useUpdateBackground = () => {
       if (currentHour >= 5 && currentHour < 18) {
         bodyElement.classList.add("daytime");
         bodyElement.classList.remove("nighttime");
+        setTimeOfDay("day");
       } else {
         bodyElement.classList.add("nighttime");
         bodyElement.classList.remove("daytime");
+        setTimeOfDay("night");
       }
     };
 
@@ -27,4 +31,6 @@ export const useUpdateBackground = () => {
 
     return () => clearInterval(interval); // Cleanup on component unmount
   }, [timeData]);
+
+  return timeOfDay;
 };
