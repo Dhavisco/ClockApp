@@ -125,7 +125,7 @@ export const TimeSection = ({toggleExpand, isExpanded}:TimeSectionProps) => {
         onInit={(typewriter) => {
         typewriter
           .typeString(specialSeasonMessage)
-          .pauseFor(2000) // Pause before deleting
+          .pauseFor(5000) // Pause before deleting
           .deleteAll()
           .start();
       }}
