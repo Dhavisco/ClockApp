@@ -73,6 +73,9 @@ $breakpoint-desktop: 1024px;
   }
 
   .special-season{
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
      font-size: large;
     letter-spacing: 1.2px;
     font-weight: 250;
@@ -80,6 +83,7 @@ $breakpoint-desktop: 1024px;
     .tree{
         height: 1.8rem;
         width: 1.8rem;
+        color:gold;
     }
   }
 
@@ -93,6 +97,19 @@ $breakpoint-desktop: 1024px;
       font-size: 1rem;
       font-weight: 300;
     }
+
+   .clock-indicator {
+  display: inline-block;
+  margin-left: 10px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: green;
+
+  /* Optional Shadow for better visuals */
+  box-shadow: 0px 0px 8px rgba(0, 179, 0, 0.8);
+}
+ 
 
     @media (min-width: $breakpoint-desktop) {
       font-size: 7rem;
@@ -156,6 +173,7 @@ $breakpoint-desktop: 1024px;
   left: 0;
   width: 100vw;
   height: 50vh;
+  padding: 1rem 0;
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(10px);
   display: flex;
