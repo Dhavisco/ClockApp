@@ -67,4 +67,34 @@ $breakpoint-desktop: 1024px;
       }
     }
   }
+}.preloader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
+  background-color: #ffff; /* A light, neutral background */
+  position: fixed; /* Ensures it overlays everything */
+  top: 0;
+  left: 0;
+  z-index: 9999; /* High z-index to appear above all other elements */
 }
+
+.preloader img {
+  width: 100px; /* Adjust width based on your GIF size */
+  height: auto; /* Maintain the aspect ratio */
+  animation: bounce 1.5s infinite; /* Adding a subtle bounce effect */
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+
+
