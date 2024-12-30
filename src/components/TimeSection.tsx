@@ -8,7 +8,8 @@ import SunIcon from './../assets/desktop/icon-sun.svg';
 import MoonIcon from './../assets/desktop/icon-moon.svg';
 import ArrowDownIcon from './../assets/desktop/icon-arrow-down.svg';
 import ArrowUpIcon from './../assets/desktop/icon-arrow-up.svg';
-import { TbChristmasTreeFilled } from "react-icons/tb";
+// import { TbChristmasTreeFilled } from "react-icons/tb";
+import { MdCelebration } from "react-icons/md";
 import Preloader from "./Preloader";
 
 
@@ -29,7 +30,7 @@ export const TimeSection = ({toggleExpand, isExpanded}:TimeSectionProps) => {
 //   const [isExpanded, setIsExpanded] = useState(false)
   const timeOfDay = useUpdateBackground();
 
-  const specialSeasonMessage = 'MERRY CHRISTMAS!'
+  const specialSeasonMessage = 'HAPPY NEW YEAR IN ADVANCE!'
 
   // Utility function to determine greeting and styles
   const getTimeInfo = (hours: number) => {
@@ -116,7 +117,7 @@ export const TimeSection = ({toggleExpand, isExpanded}:TimeSectionProps) => {
     <div className="time-content">
     
          <div className="special-season">
-        <TbChristmasTreeFilled className="tree"/>
+        < MdCelebration className="tree"/>
         {specialSeasonMessage}</div>
       <div className="greeting">
         <img src={timeInfo.icon} alt="Icon" />
