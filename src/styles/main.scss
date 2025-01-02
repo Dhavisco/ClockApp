@@ -71,8 +71,8 @@ $breakpoint-desktop: 1024px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Full height of the viewport */
-  width: 100vw; /* Full width of the viewport */
+  height: 100dvh; /* Full height of the viewport */
+  width: 100dvw; /* Full width of the viewport */
   background-color: #ffff; /* A light, neutral background */
   position: fixed; /* Ensures it overlays everything */
   top: 0;
