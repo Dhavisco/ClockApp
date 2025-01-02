@@ -8,7 +8,7 @@ $breakpoint-desktop: 1024px;
 // $max-width-desktop: 1040px; // Centering limit for desktops
 
 .main-container {
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

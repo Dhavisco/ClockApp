@@ -8,10 +8,12 @@ export const useUpdateBackground = () => {
 
   useEffect(() => {
     const updateBackground = () => {
-      if (!timeData?.datetime) return;
 
-    //   const currentHour = new Date().getHours();
-      const currentHour = new Date(timeData?.datetime).getHours();
+      // Use fallback if timeData is unavailable or invalid
+      const fallbackHour = new Date().getHours(); // Fallback to system time
+      const currentHour = timeData?.datetime
+        ? new Date(timeData.datetime).getHours()
+        : fallbackHour;
       const bodyElement = document.body;
 
       // Determine time of day

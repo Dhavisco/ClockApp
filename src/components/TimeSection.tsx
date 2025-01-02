@@ -32,7 +32,7 @@ export const TimeSection = ({toggleExpand, isExpanded}:TimeSectionProps) => {
 
   const timeOfDay = useUpdateBackground();
 
-  const specialSeasonMessage = 'HAPPY NEW YEAR IN ADVANCE!'
+  const specialSeasonMessage = 'HAPPY NEW YEAR! WELCOME TO 2025'
 
   // Utility function to determine greeting and styles
   const getTimeInfo = (hours: number) => {
