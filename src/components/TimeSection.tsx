@@ -72,31 +72,35 @@ export const TimeSection = ({toggleExpand, isExpanded}:TimeSectionProps) => {
   }, []);
 
 
-
+let day;
+  switch (timeData.day_of_week) {
+  case 0:
+    day = "Sunday";
+    break;
+  case 1:
+    day = "Monday";
+    break;
+  case 2:
+     day = "Tuesday";
+    break;
+  case 3:
+    day = "Wednesday";
+    break;
+  case 4:
+    day = "Thursday";
+    break;
+  case 5:
+    day = "Friday";
+    break;
+  case 6:
+    day = "Saturday";
+}
 
   if (timeLoading || locationLoading) {
     return <Preloader />;
   }
 
   return (
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -205,7 +209,7 @@ export const TimeSection = ({toggleExpand, isExpanded}:TimeSectionProps) => {
         <div className="day-week">
             <div className="day details-wrap">
                 <div className="details-head">DAY OF THE WEEK</div>
-                <div className="details-info">{timeData?.day_of_week}</div>
+                <div className="details-info">{day}</div>
             </div>
             <div className="week-number details-wrap">
                 <div className="details-head">WEEK NUMBER</div>
