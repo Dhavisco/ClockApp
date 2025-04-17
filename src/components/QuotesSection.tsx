@@ -85,7 +85,7 @@ const QuotesSection = ({ isExpanded }: QuotesSectionProps) => {
     setTimeout(() => setIsRotating(false), 600); // End rotation after 600ms
   };
 
-  // Auto-refresh every 60 seconds
+  // Auto-refresh every 20 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       triggerRefresh();
