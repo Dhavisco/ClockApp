@@ -141,17 +141,42 @@ $breakpoint-desktop: 1024px;
   align-items: center;
   justify-content: space-between;
   padding: 0.5rem 0.8rem;
-  max-width: 7rem;
+  max-width: 8.5rem;
   z-index: 5; // Ensure it stays on top
   transition: transform 0.3s ease-in-out; // Smooth transition
 
+  // .time-arrow {
+  //   background-color: #303030;
+  //   border-radius: 8rem;
+  //   display: flex;
+  //   align-items: center;
+  //   padding: 0.9rem 0.8rem;
+  //   transition: background-color 0.2s ease, transform 0.2s ease;
+
+  //   &:hover {
+  //     cursor: pointer;
+  //     background-color: rgba(114, 114, 114, 0.856);
+  //     transform: scale(1.02);
+  //   }
+  // }
+
   .time-arrow {
     background-color: #303030;
-    border-radius: 8rem;
+    border-radius: 50%; // Use 50% for a perfect circle if desired, or keep 8rem
     display: flex;
     align-items: center;
-    padding: 0.9rem 0.8rem;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    justify-content: center; // Add this to center the icon
+    padding: 0.5rem 0.68rem; // Default padding for "less" state
+    transition: background-color 0.2s ease, transform 0.2s ease, padding 0.3s ease-in-out; // Added padding transition
+
+    // --- Style the icon directly ---
+    img {
+      display: block; // Good practice for images
+      width: 1em;     // Adjust size as needed (e.g., 12px, 1rem)
+      height: 1em;    // Adjust size as needed
+      transition: transform 0.3s ease-in-out; // Add transition for rotation if needed later
+    }
+    // --- End icon styles ---
 
     &:hover {
       cursor: pointer;

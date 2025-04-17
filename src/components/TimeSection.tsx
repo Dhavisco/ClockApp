@@ -21,8 +21,13 @@ interface TimeSectionProps {
 }
 
 export const TimeSection = ({toggleExpand, isExpanded}:TimeSectionProps) => {
-  const { data: timeData, isLoading:timeLoading } = useTime();
-  const { data: locationData, isLoading:locationLoading } = useLocation();
+  const { data: locationData, isLoading: locationLoading } = useLocation();
+const ip = locationData?.ip;
+// console.log(locationData?.ip)
+const { data: timeData, isLoading: timeLoading } = useTime(ip);
+
+// console.log("IP Address:", ip);
+// console.log("Time Data:", timeData);
 
   const [currentTime, setCurrentTime] = useState<string>("");
   const [timeInfo, setTimeInfo] = useState({
@@ -32,7 +37,8 @@ export const TimeSection = ({toggleExpand, isExpanded}:TimeSectionProps) => {
 
   const timeOfDay = useUpdateBackground();
 
-  const specialSeasonMessage = 'WELCOME TO 2025!'
+  const specialSeasonMessage = 'WELCOME TO CLOCKAPP!'
+
 
   // Utility function to determine greeting and styles
   const getTimeInfo = (hours: number) => {
@@ -72,33 +78,24 @@ export const TimeSection = ({toggleExpand, isExpanded}:TimeSectionProps) => {
   }, []);
 
 
-let day;
-  switch (timeData.day_of_week) {
-  case 0:
-    day = "Sunday";
-    break;
-  case 1:
-    day = "Monday";
-    break;
-  case 2:
-     day = "Tuesday";
-    break;
-  case 3:
-    day = "Wednesday";
-    break;
-  case 4:
-    day = "Thursday";
-    break;
-  case 5:
-    day = "Friday";
-    break;
-  case 6:
-    day = "Saturday";
+// let day = "";
+// if (timeData?.day_of_week !== undefined) {
+//   switch (timeData.day_of_week) {
+//     case 0: day = "Sunday"; break;
+//     case 1: day = "Monday"; break;
+//     case 2: day = "Tuesday"; break;
+//     case 3: day = "Wednesday"; break;
+//     case 4: day = "Thursday"; break;
+//     case 5: day = "Friday"; break;
+//     case 6: day = "Saturday"; break;
+//   }
+// }
+
+
+ if (timeLoading || locationLoading || !timeData || !locationData) {
+  return <Preloader />;
 }
 
-  if (timeLoading || locationLoading) {
-    return <Preloader />;
-  }
 
   return (
 
@@ -153,6 +150,7 @@ let day;
       transition={{ duration: 0.8 }}
       className="time">
         {currentTime} <span>{timeData?.abbreviation}</span>
+
         {/* Clock indicator */}
   <motion.div
     className="clock-indicator"
@@ -198,22 +196,22 @@ let day;
         <div className="time-year">
             <div className="timezone details-wrap">
             <div className="details-head">CURRENT TIMEZONE</div>
-            <div className="details-info">{timeData?.timezone}</div>
+            <div className="details-info">{timeData?.timeZone}</div>
             </div> 
             
             <div className="day-year details-wrap">
-            <div className="details-head">DAY OF THE YEAR</div>
-            <div className="details-info">{timeData?.day_of_year}</div>
+            <div className="details-head">YEAR</div>
+            <div className="details-info">{timeData?.year}</div>
             </div>
         </div>
         <div className="day-week">
             <div className="day details-wrap">
                 <div className="details-head">DAY OF THE WEEK</div>
-                <div className="details-info">{day}</div>
+                <div className="details-info">{timeData?.dayOfWeek}</div>
             </div>
             <div className="week-number details-wrap">
-                <div className="details-head">WEEK NUMBER</div>
-                <div className="details-info">{timeData?.week_number}</div>
+                <div className="details-head">Date Time</div>
+                <div className="details-info">{timeData?.date}</div>
             </div>
         </div>
         
